@@ -1,20 +1,20 @@
 package com.mycompany.model;
 
 import lombok.Data;
-import lombok.Generated;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "store")
 @Data
-public class Customer {
+public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_id")
+    @Column(name = "store_id")
     private int id;
-    @Column(name = "customer_surname")
-    private String surname;
+    @Column(name = "store_name")
+    private String name;
     private String district;
-    private int discount;
+    private int commission;
+
 }
