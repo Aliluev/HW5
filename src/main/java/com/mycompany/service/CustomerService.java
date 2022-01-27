@@ -48,15 +48,15 @@ public class CustomerService {
         Customer customer = repository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Contact not found:" + id)
         );
-        if(customer.getSurname()!=null){
+        if(updateCustomer.getSurname()!=null){
             customer.setSurname(updateCustomer.getSurname());
         }
 
-        if(customer.getDistrict()!=null){
+        if(updateCustomer.getDistrict()!=null){
             customer.setDistrict(updateCustomer.getDistrict());
         }
 
-        if(customer.getDiscount()!=null){
+        if(updateCustomer.getDiscount()!=null){
             customer.setDiscount(updateCustomer.getDiscount());
         }
          repository.save(customer);

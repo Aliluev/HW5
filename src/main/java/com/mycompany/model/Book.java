@@ -16,9 +16,9 @@ public class Book {
     @Column(name = "book_name")
     private String name;
     @Column(name = "book_price")
-    private int price;
+    private Integer price;
     @Column(name = "book_storage")
     private String storage;
     @Column(name = "book_count")
-    private int count;
+    private Integer count;
 }
