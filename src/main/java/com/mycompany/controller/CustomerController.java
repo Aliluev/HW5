@@ -4,6 +4,7 @@ import com.mycompany.exception.ResourceNotFoundException;
 import com.mycompany.model.Customer;
 import com.mycompany.repository.CustomerRepository;
 
+import com.mycompany.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,43 +14,52 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/rest")
+
 public class CustomerController {
 
     @Autowired
-    CustomerRepository repository;
+    CustomerService service;
 
     @GetMapping("/customer")
     public List<Customer> getAllCustomer(){
-        return repository.findAll();
+        return service.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/customer/{id}")
     public ResponseEntity<Customer> addCustomer(@PathVariable(value = "id") Integer id) throws ResourceNotFoundException {
-        Customer customer  = repository.findById(id).orElseThrow(
-                ()-> new ResourceNotFoundException("Contact not found:"+ id)
-        );
-
+        Customer customer  = service.findById(id);
         return ResponseEntity.ok().body(customer);
-
     }
-    @PostMapping("/create")
-    public Customer createCustomer(@RequestBody Customer customer){
-        return repository.save(customer);
+    @PostMapping("/customer")
+    public void createCustomer(@RequestBody Customer customer){
+        service.save(customer);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/customer/{id}")
     public HashMap<String, Boolean> deleteCustomer(@PathVariable(value = "id") Integer id)throws ResourceNotFoundException{
-        Customer customer  = repository.findById(id).orElseThrow(
-                ()-> new ResourceNotFoundException("Contact not found:"+ id)
-        );
 
-        repository.delete(customer);
-
+        service.deleteById(id);
         HashMap<String,Boolean> responce=new HashMap<>();
         responce.put("Deleted", true);
         return responce;
 
+    }
+
+    @PatchMapping("/customer/{id}")
+    public HashMap<String, Boolean> updateCustomer(@PathVariable(value = "id") Integer id, @RequestBody Customer customer)throws ResourceNotFoundException{
+        service.update(id,customer);
+        HashMap<String,Boolean> responce=new HashMap<>();
+        responce.put("Update", true);
+        return responce;
+    }
+
+
+    @PutMapping("/customer/{id}")
+    public HashMap<String, Boolean> fullUpdateCustomer(@PathVariable(value = "id") Integer id, @RequestBody Customer customer)throws ResourceNotFoundException{
+        service.fullUpdate(id, customer);
+        HashMap<String,Boolean> responce=new HashMap<>();
+        responce.put("FullUpdate", true);
+        return responce;
     }
 
 

@@ -13,8 +13,8 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private int id;
-    @Column(name = "customer_surname")
+    @Column(name = "customer_sname")
     private String surname;
     private String district;
-    private int discount;
+    private Integer discount;
 }
