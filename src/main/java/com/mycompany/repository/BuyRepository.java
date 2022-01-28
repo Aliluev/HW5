@@ -1,13 +1,11 @@
 package com.mycompany.repository;
 
-import com.mycompany.model.Book;
-
+import com.mycompany.model.Buy;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookRepository extends JpaRepository<Book,Integer> {
-
+public interface BuyRepository extends JpaRepository<Buy,Integer> {
 
 
 }
