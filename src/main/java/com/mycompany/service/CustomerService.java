@@ -74,6 +74,13 @@ public class CustomerService {
         repository.save(customer);
     }
 
+    public List<String> districtWhereCustomerLive(){
+        return repository.districtWhereCustomerLive();
+    }
+
+    public List<String> surnameDiscountNizhegorodskiy(){
+        return repository.surnameDiscountNizhegorodskiy();
+    }
 
 
 }

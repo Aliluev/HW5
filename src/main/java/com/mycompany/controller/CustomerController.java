@@ -62,5 +62,17 @@ public class CustomerController {
         return responce;
     }
 
+    @GetMapping("/customer/district-where-customer-live")
+    public List<String> districtWhereCustomerLive(){
+        return service.districtWhereCustomerLive();
+    }
+
+    @GetMapping("/customer/surname-discount-nezhegorodskiy")
+    public List<String> surnameDiscountNizhegorodskiy(){
+        return service.surnameDiscountNizhegorodskiy();
+    }
+
+
+
 
 }

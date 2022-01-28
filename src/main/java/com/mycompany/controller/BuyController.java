@@ -17,6 +17,7 @@ public class BuyController {
     @Autowired
     BuyService service;
 
+
     @GetMapping("/buy")
     public List<Buy> getAllBuy(){
         return service.findAll();
@@ -59,7 +60,35 @@ public class BuyController {
         return responce;
     }
 
+    @GetMapping("/buy/month-where-buy")
+    public List<String> monthWhereBuy(){
+        return service.monthWhereBuy();
+    }
+    @GetMapping("/buy/get-surname-and-shop")
+    public List<String> getSurnameAndShop(){
+        return service.getSurnameAndShop();
+    }
+    @GetMapping("/buy/get-data-surname-discount-book-name-num")
+    public List<String> getDateSurnameDiscountBookNameNum(){
+        return service.getDateSurnameDiscountBookNameNum();
+    }
+    @GetMapping("/buy/get-buy-total-more60000")
+    public List<String> getBuyTotalMore60000(){
+        return service.getBuyTotalMore60000();
+    }
+    @GetMapping("/buy/get-buy-in-customer-district")
+    public List<String> getBuyInCustomerDistrict(){
+        return service.getBuyInCustomerDistrict();
+    }
+    @GetMapping("/buy/get-store-not-avtoz-and-district-from10to15")
+    public List<String> getStoreNotInAvtozAndDistricttFrom10To15(){
+        return service.getStoreNotInAvtozAndDistricttFrom10To15();
+    }
 
+    @GetMapping("/buy/get-book-buy-details")
+    public  List<String> getBookBuyDetails(){
+        return service.getBookBuyDetails();
+    }
 
 
 }

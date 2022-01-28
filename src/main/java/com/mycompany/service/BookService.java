@@ -80,6 +80,13 @@ public class BookService {
         repository.save(book);
     }
 
+    public List<String> AllNameAndPrice(){
+        return repository.AllNameAndPrice();
+    }
+
+    public List<String> nameWindowsOrPriceMore20000(){
+        return repository.nameWindowsOrPriceMore20000();
+    }
 
 
 

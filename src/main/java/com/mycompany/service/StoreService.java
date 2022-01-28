@@ -76,7 +76,9 @@ public class StoreService {
         repository.save(store);
     }
 
-
+    public  List<String> storeSormovoOrSovetskiy(){
+        return repository.storeSormovoOrSovetskiy();
+    }
 
 
 

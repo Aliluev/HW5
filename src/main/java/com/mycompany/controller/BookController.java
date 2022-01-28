@@ -59,4 +59,13 @@ public class BookController {
         return responce;
     }
 
+    @GetMapping("/book/get-all-name-and-price")
+    public List<String> AllNameAndPrice(){
+        return service.AllNameAndPrice();
+    }
+    @GetMapping("/book/get-name-windows-or-price-more-20000")
+    public List<String> nameWindowsOrPriceMore20000(){
+        return service.nameWindowsOrPriceMore20000();
+    }
+
 }

@@ -87,10 +87,32 @@ public class BuyService {
         repository.save(buy);
     }
 
+    public List<String> monthWhereBuy(){
+        return repository.monthWhereBuy();
+    }
 
+    public List<String> getSurnameAndShop(){
+        return repository.getSurnameAndShop();
+    }
 
+    public List<String> getDateSurnameDiscountBookNameNum(){
+        return repository.getDateSurnameDiscountBookNameNum();
+    }
 
+    public List<String> getBuyTotalMore60000(){
+        return repository.getBuyTotalMore60000();
+    }
 
+    public List<String> getBuyInCustomerDistrict(){
+        return repository.getBuyInCustomerDistrict();
+    }
 
+    public List<String> getStoreNotInAvtozAndDistricttFrom10To15(){
+        return repository.getStoreNotInAvtozAndDistricttFrom10To15();
+    }
+
+    public  List<String> getBookBuyDetails(){
+        return repository.getBookBuyDetails();
+    }
 
 }

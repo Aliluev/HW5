@@ -59,6 +59,11 @@ public class StoreController {
         return responce;
     }
 
+    @GetMapping("/store/district-sormovo-or-sovetskiy")
+    public  List<String> storeSormovoOrSovetskiy(){
+        return service.storeSormovoOrSovetskiy();
+    }
+
 
 
 
